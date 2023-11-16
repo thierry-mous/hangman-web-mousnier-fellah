@@ -1,0 +1,28 @@
+.gif{
+    background-image: url(/static/image/welcome-to-spider-society-spider-society.gif);
+    background-size: 120%;
+    background-repeat: no-repeat;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 3px solid;
+    border-color: blue;
+    background-image: url(/static/image/fondtitle.jpg);
+    border-radius: 20px 0 20px 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: center;
+}
+
+.text{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.block{
+    display: flex;
+}

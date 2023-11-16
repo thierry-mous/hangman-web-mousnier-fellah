@@ -17,24 +17,18 @@ func main() { //lire tout nos templates html
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "home", nil)
 	})
-	
-	http.HandleFunc("/level1", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level1", nil)
+
+	http.HandleFunc("/choice", func(w http.ResponseWriter, r *http.Request) {
+		menu := r.FormValue("menu")
+		fmt.Println(menu)
 	})
-	http.HandleFunc("/level2", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level2", nil)
+
+	http.HandleFunc("/level", func(w http.ResponseWriter, r *http.Request) {
+		temp.ExecuteTemplate(w, "level", nil)
 	})
-	http.HandleFunc("/level3", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level3", nil)
-	})
-	http.HandleFunc("/level4", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level4", nil)
-	})
-	http.HandleFunc("/level5", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level5", nil)
-	})
-	http.HandleFunc("/level6", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level6", nil)
+
+	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
+		temp.ExecuteTemplate(w, "menu", nil)
 	})
 	//lie le css
 	rootDoc, _ := os.Getwd()

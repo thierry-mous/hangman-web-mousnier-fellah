@@ -1,0 +1,14 @@
+body{
+    background: url(/static/image/home.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color : red;
+    display: flex;
+    justify-content: center;
+    border: 5px solid;
+    border-color: black;
+   
+}

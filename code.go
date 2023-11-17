@@ -24,6 +24,21 @@ func main() { //lire tout nos templates html
 
 	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
 		tmpl.ExecuteTemplate(w, "menu", nil)
+
+	})
+
+	http.HandleFunc("/choice", func(w http.ResponseWriter, r *http.Request) {
+		menu := r.FormValue("level")
+		fmt.Println(menu)
+	})
+
+	http.HandleFunc("/level", func(w http.ResponseWriter, r *http.Request) {
+		temp.ExecuteTemplate(w, "level", nil)
+	})
+
+	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
+		temp.ExecuteTemplate(w, "menu", nil)
+
 	})
 
 	//lie le css

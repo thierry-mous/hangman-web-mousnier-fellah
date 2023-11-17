@@ -33,11 +33,11 @@ func main() { //lire tout nos templates html
 	})
 
 	http.HandleFunc("/level", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "level", nil)
+		tmpl.ExecuteTemplate(w, "level", nil)
 	})
 
 	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "menu", nil)
+		tmpl.ExecuteTemplate(w, "menu", nil)
 
 	})
 

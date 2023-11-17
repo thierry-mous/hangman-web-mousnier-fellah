@@ -19,7 +19,7 @@ func main() { //lire tout nos templates html
 	})
 
 	http.HandleFunc("/choice", func(w http.ResponseWriter, r *http.Request) {
-		menu := r.FormValue("menu")
+		menu := r.FormValue("level")
 		fmt.Println(menu)
 	})
 

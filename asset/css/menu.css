@@ -1,20 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 16px;
+}
+
+.f-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .gif{
-    background-image: url(/static/image/welcome-to-spider-society-spider-society.gif);
-    background-size: 120%;
+    background-image: url(/static/image/fondmenu.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .title{
+    width: fit-content;
     display: flex;
     justify-content: center;
     color: white;
     border: 3px solid;
     border-color: blue;
-    background-image: url(/static/image/fondtitle.jpg);
+    background-image: url(/static/image/logo1.jpg);
+    background-size: 30%;
     border-radius: 20px 0 20px 0;
-    margin-left: 20%;
-    margin-right: 20%;
     align-items: center;
+    padding: 10px 20px;
 }
 
 .text{
@@ -23,6 +41,33 @@
     justify-content: center;
 }
 
-.block{
+input[type="radio"]{
+
+}
+
+.form{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ligne{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.enca{
+    border: 6px solid black;
+    width: 30%;
+    color: white;
+}
+
+.lastligne{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form{
+    width: 100%;
 }

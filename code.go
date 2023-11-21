@@ -8,7 +8,12 @@ import (
 )
 
 func main() { //lire tout nos templates html
-	tmpl := template.Must(template.ParseFiles("template/home.html", "template/level.html", "template/end.html", "template/menu.html"))
+
+	tmpl, err := template.ParseGlob("./template/*.html")
+    if err != nil {
+        fmt.Printf(fmt.Sprintf("ERREUR => %s", err.Error()))
+        return
+    }
 
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 		tmpl.ExecuteTemplate(w, "home", nil)
@@ -18,8 +23,8 @@ func main() { //lire tout nos templates html
 		tmpl.ExecuteTemplate(w, "level", nil)
 	})
 
-	http.HandleFunc("/end", func(w http.ResponseWriter, r *http.Request) {
-		tmpl.ExecuteTemplate(w, "end", nil)
+	http.HandleFunc("/victory", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "victory", nil)
 	})
 
 	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
@@ -30,6 +35,11 @@ func main() { //lire tout nos templates html
 	http.HandleFunc("/choice", func(w http.ResponseWriter, r *http.Request) {
 		menu := r.FormValue("level")
 		fmt.Println(menu)
+	})
+
+	http.HandleFunc("/defaite", func(w http.ResponseWriter, r *http.Request) {
+		tmpl.ExecuteTemplate(w, "defaite", nil)
+
 	})
 
 	//lie le css

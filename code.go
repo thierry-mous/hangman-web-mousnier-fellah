@@ -32,15 +32,6 @@ func main() { //lire tout nos templates html
 		fmt.Println(menu)
 	})
 
-	http.HandleFunc("/level", func(w http.ResponseWriter, r *http.Request) {
-		tmpl.ExecuteTemplate(w, "level", nil)
-	})
-
-	http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
-		tmpl.ExecuteTemplate(w, "menu", nil)
-
-	})
-
 	//lie le css
 	rootDoc, _ := os.Getwd()
 	fmt.Println("Serveur écoutant sur le port 8085")
